@@ -90,7 +90,9 @@ export default class CompShopMain extends Component {
 				</div>
 
 				<div className="itemslist">
-					<CompShopCategory data={this.state.json["best-sellers"]} category="best-sellers" filters={this.state.filters} />
+					<CompShopCategory title="Mais vendidos" data={this.state.json["best-sellers"]} category="best-sellers" filters={this.state.filters} />
+					<br/>
+					<CompShopCategory title="Lançamentos" data={this.state.json["releases"]} category="releases" filters={this.state.filters} />
 				</div>
 			</div>
 		);

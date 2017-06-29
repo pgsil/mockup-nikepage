@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
+import Slider from 'react-slick';
 
 import CompShopItem from './CompShopItem';
 
 export default class CompShopCategory extends Component {
 	buildItems(){
-		if(this.props.data){	
+		if(this.props.data){
 			let filters = this.props.filters;
 
-			return this.props.data.map((element, index) => {
-				let componentMapped = (<CompShopItem 
+			let componentsReady = this.props.data.map((element, index) => {
+				let componentMapped = (<div key={"compshopitem-" + this.props.category + index + "-container"}><CompShopItem 
 								key={"compshopitem-" + this.props.category + index} 
 								name={element.title}
 								imgurl={element.image}
 								installments={element.installments}
-								price={element.price} />)
+								price={element.price} /></div>)
 
 				/*No filter, just return components*/
 				if(filters.length === 0){
@@ -40,9 +41,23 @@ export default class CompShopCategory extends Component {
 
 					return match ? componentMapped : null;
 				}
-
-
 			});
+
+			/*Checks if an array is all nulls*/
+			function allNull(array) {
+			    for (var i = 0; i < array.length; i++)
+			        if (array[i] !== null)
+			            return false;
+			    return true;
+			}
+
+			/*Only returns the components if there were hits after filtering*/
+			if(allNull(componentsReady)){
+				return (<p>Sem resultados!</p>);
+			}
+			else{
+				return componentsReady;
+			}
 		}
 		else{
 			console.log("CompShopCategory buildItems(): No props.data. Loading or fetch error?")
@@ -51,9 +66,21 @@ export default class CompShopCategory extends Component {
 	}
 
 	render(){
+		var slideSettings = {
+		  dots: true,
+		  infinite: false,
+		  speed: 500,
+		  slidesToShow: 4,
+		  slidesToScroll: 1
+		};
+
 		return (
-			<div className="shop-item">
-				{this.buildItems()}
+			<div className="shop-category">
+				<p className="shop-category-title">{this.props.title}</p>
+				<br/>
+				<Slider {...slideSettings}>
+					{this.buildItems()}
+				</Slider>
 			</div>
 		);
 	}

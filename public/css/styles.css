@@ -11,3 +11,11 @@ html{
 	background-repeat: no-repeat;
 	background-color: #ff5c2c;
 }
+* {
+  min-height: 0;
+  min-width: 0;
+}
+
+.shop-category{
+	min-height: 500px;
+}
