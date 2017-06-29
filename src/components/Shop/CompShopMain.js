@@ -40,9 +40,6 @@ export default class CompShopMain extends Component {
 
 			e.target.checked = true;
 		}
-
-		console.log(this.state.filters);
-		console.log(e.target.checked);
 	}
 
 	conditionalRender(){
