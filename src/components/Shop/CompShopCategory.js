@@ -23,13 +23,18 @@ export default class CompShopCategory extends Component {
 				else{
 					let match = true;
 
-					if(((filters.indexOf("campo") > -1) || (filters.indexOf("society") > -1)) && filters.indexOf(element.category) < 0){
+					let filterHighTops = (filters.indexOf('high-top') > - 1);
+					let filterLowTops = (filters.indexOf('low-top') > -1);
+
+					if(filterHighTops && !filterLowTops && !element['high-top']){
 						match = false;
 					}
-					if(filters.indexOf('high-top') > -1 && !element['high-top']){
+
+					if(filterLowTops && !filterHighTops && element['high-top']){
 						match = false;
 					}
-					if(filters.indexOf('low-top') > -1 && element['high-top']){
+
+					if( ((filters.indexOf("campo") > -1) || (filters.indexOf("society") > -1)) && filters.indexOf(element.category) < 0){
 						match = false;
 					}
 
