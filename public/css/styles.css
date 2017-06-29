@@ -1,0 +1,13 @@
+html{
+	font-family: 'Roboto', sans-serif!important;
+}
+
+#big-banner{
+	width: 100%;
+	height: 550px;
+
+	background: url(/images/banner_finishit.jpg);  
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-color: #ff5c2c;
+}

@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+import CompHeader from './components/CompHeader';
+import CompBigBanner from './components/CompBigBanner';
+import CompShopMain from './components/Shop/CompShopMain';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        Hello world
+        <CompHeader />
+        <CompBigBanner />
+        <CompShopMain />
       </div>
     );
   }
