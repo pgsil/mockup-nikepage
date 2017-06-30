@@ -72,8 +72,6 @@ export default class CompShopMain extends Component {
 					<div className="level-left">
 						<div className="filter-title space-r40">Chuteiras HyperVenom:</div>
 
-						<span>&nbsp;</span>
-
 						<FilterCheckbox name="high-top" label="Cano alto" change={this.handleCheckbox} ref="filtercheckbox1" />
 
 						<FilterCheckbox name="low-top" label="Cano baixo" change={this.handleCheckbox} ref="filtercheckbox2" />

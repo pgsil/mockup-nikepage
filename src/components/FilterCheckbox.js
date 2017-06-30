@@ -28,8 +28,8 @@ export default class FilterCheckbox extends Component{
 		return(
 			<label className="filter-item space-r20" onChange={this.handleClick} style={this.chooseStyle()}>
 				<div className="level filter-inner" htmlFor={this.props.name} style={this.chooseStyle()}>
-					<input type="checkbox" className="checkbox" name={this.props.name}  checked={this.state.checked} />
-					<div className="level-left">{this.props.label}</div>
+					<div className="level-item"><input type="checkbox" className="checkbox" name={this.props.name}  checked={this.state.checked} /> 
+					{this.props.label}</div>
 				</div>
 			</label>
 		)
