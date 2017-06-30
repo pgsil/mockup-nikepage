@@ -4,10 +4,8 @@ export default class Footer extends Component{
 	render(){
 		return (<div className="footer">
 					<div className="container">
-						<div className="content has-text-centered">
-							<p>
-								Nike Copyright 2017 - all rights reserved
-							</p>							
+						<div className="content has-text-centered">							
+								<div className="footer-text">Nike Copyright 2017 - all rights reserved</div>
 						</div>
 					</div>
 				</div>)

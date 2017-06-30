@@ -291,3 +291,13 @@ body{
     display: block;
   }
 }
+
+/*Footer*/
+.footer{
+	font-size: 10pt;
+	background-color: white;
+	padding-top: 0;
+}
+.footer-text{
+	color: #999;
+}
