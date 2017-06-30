@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 export default class CompBigBanner extends Component {	
 	render(){
 		return (
-			<div id="big-banner" style={{ 	backgroundSize: this.props.bgSizeOverride,
+			<div className="big-banner" style={{ 	backgroundSize: this.props.bgSizeOverride,
 											backgroundImage: 'url('+ this.props.imgUrl + ')',
 											backgroundColor: this.props.bgColor,
 											backgroundPosition: this.props.bgPos,

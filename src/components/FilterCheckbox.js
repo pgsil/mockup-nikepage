@@ -26,7 +26,7 @@ export default class FilterCheckbox extends Component{
 
 	render(){
 		return(
-			<label className="filter-item space-r20" onChange={this.handleClick} style={this.chooseStyle()}>
+			<label className="filter-item space-r20" onChange={this.handleClick} checked={this.state.checked} style={this.chooseStyle()}>
 				<div className="level" htmlFor={this.props.name}>
 					<input type="checkbox" className="checkbox" name={this.props.name}  />
 					{this.props.label}

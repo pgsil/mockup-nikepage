@@ -9,6 +9,7 @@ export default class CompShopMain extends Component {
 		this.state = {filters: [], json: {}};
 
 		this.handleCheckbox = this.handleCheckbox.bind(this);
+		this.handleFilterClear = this.handleFilterClear.bind(this);
 	}
 
 	componentWillMount(){
@@ -20,6 +21,19 @@ export default class CompShopMain extends Component {
 		.then(() => console.log("JSON fetch success"))
 
 		.catch((err) => {console.log("JSON fetch error at componentWillMount in CompShopMain: " + err)});
+	}
+
+	handleFilterClear(){
+		this.setState({filters: []});
+		console.log(this.refs);
+
+		
+
+		for(var key in this.refs){
+			if(this.refs.hasOwnProperty(key)){
+				console.log(this.refs[key]);
+			}
+		}
 	}
 
 	handleCheckbox(value){
@@ -55,21 +69,21 @@ export default class CompShopMain extends Component {
 
 				<div className="level filters-main">
 					<div className="level-left">
-						<span className="filter-title space-r40"><b>Chuteiras HyperVenom:</b></span>
+						<div className="filter-title space-r40">Chuteiras HyperVenom:</div>
 
 						<span>&nbsp;</span>
 
-						<FilterCheckbox name="high-top" label="Cano alto" change={this.handleCheckbox} />
+						<FilterCheckbox name="high-top" label="Cano alto" change={this.handleCheckbox} ref="filtercheckbox1" />
 
-						<FilterCheckbox name="low-top" label="Cano baixo" change={this.handleCheckbox} />
+						<FilterCheckbox name="low-top" label="Cano baixo" change={this.handleCheckbox} ref="filtercheckbox2" />
 
-						<FilterCheckbox name="campo" label="Futebol Campo" change={this.handleCheckbox} />
+						<FilterCheckbox name="campo" label="Futebol Campo" change={this.handleCheckbox} ref="filtercheckbox3" />
 
-						<FilterCheckbox name="society" label="Futebol Society" change={this.handleCheckbox} />
+						<FilterCheckbox name="society" label="Futebol Society" change={this.handleCheckbox} ref="filtercheckbox4" />
 					</div>
 
 					<div className="level-right">
-						<button className="button is-dark button-showall">TODOS OS PRODUTOS</button>
+						<button className="button is-dark button-showall" onClick={this.handleFilterClear}>TODOS OS PRODUTOS</button>
 					</div>
 				</div>
 				<div className="separator">&nbsp;</div>
