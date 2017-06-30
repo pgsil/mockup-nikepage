@@ -20,13 +20,13 @@ class App extends Component {
 		return (
 			<div className="App">
 				<CompHeader />
-				<CompBigBanner imgUrl="/images/banner_finishit.jpg" 
+				<CompBigBanner imgUrl="./images/banner_finishit.jpg" 
 								bgColor="#ff5d29" 
 								bgPos="center top" 
 								height="550px" />
 				<CompShopMain />
 				<br/><br/><br/>
-				<CompBigBanner imgUrl="/images/banner_just.jpg" 
+				<CompBigBanner imgUrl="./images/banner_just.jpg" 
 								bgPos="center top" 
 								bgSizeOverride="cover" 
 								widthOverride="100vw" 

@@ -1,8 +1,8 @@
 {
-  "name": "nikepage",
+  "name": "mockup-nikepage",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://pgsil.github.io/nike-mockup",
+  "homepage": "https://pgsil.github.io/mockup-nikepage/",
   "dependencies": {
     "react": "^15.6.1",
     "react-dom": "^15.6.1",

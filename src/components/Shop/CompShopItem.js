@@ -32,7 +32,7 @@ export default class CompShopItem extends Component {
 				<img src={this.props.imgurl} alt={this.props.name} />
 
 				<div className="shop-item-personalize level-left">
-					<img src="/images/personalize.jpg" alt="personalize" /><span className="shop-item-personalize-spacer">&nbsp; </span> PERSONALIZE
+					<img src="./images/personalize.jpg" alt="personalize" /><span className="shop-item-personalize-spacer">&nbsp; </span> PERSONALIZE
 				</div>
 
 				<p className="shop-item-title"><b>{this.props.name}</b></p>

@@ -23,7 +23,7 @@ export default class CompHeader extends Component {
 
 				<nav className="nav container">
 				<a className="nav-item" href="http://www.nike.com.br/todos-modelos/chuteira">
-					<img src="/images/logo_nike.png" alt="Nike" className="space-r40" />
+					<img src="images/logo_nike.png" alt="Nike" className="space-r40" />
 				</a>
 					<span className="nav-toggle" onClick={this.handleMenuClick}>
 						<span></span>
