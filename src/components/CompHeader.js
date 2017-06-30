@@ -8,7 +8,7 @@ export default class CompHeader extends Component {
 		this.handleMenuClick = this.handleMenuClick.bind(this);
 	}
 	returnMenuActive(){
-		return this.state.menuvisible ? "is-active" : null
+		return this.state.menuvisible ? "is-active" : ""
 	}
 
 	handleMenuClick(){
@@ -22,14 +22,9 @@ export default class CompHeader extends Component {
 				<div className="navspacetop">&nbsp;</div>	
 
 				<nav className="nav container">
-					<div className="nav-left">
-					
-						<a className="nav-item" href="http://www.nike.com.br/todos-modelos/chuteira">
-							<img src="/images/logo_nike.png" alt="Nike" className="space-r40" />
-						</a>
-						
-					</div>			  
-
+				<a className="nav-item" href="http://www.nike.com.br/todos-modelos/chuteira">
+					<img src="/images/logo_nike.png" alt="Nike" className="space-r40" />
+				</a>
 					<span className="nav-toggle" onClick={this.handleMenuClick}>
 						<span></span>
 						<span></span>
@@ -37,7 +32,6 @@ export default class CompHeader extends Component {
 					</span>
 					
 					<div className={"nav-right nav-menu " + this.returnMenuActive()} >
-						
 						<div className="nav-item"> 
 								<a className="nav-item space-r20"  href="http://www.nike.com.br/produtos/masculinos?nid=101296">
 									MASCULINO
@@ -51,12 +45,11 @@ export default class CompHeader extends Component {
 								<a className="nav-item space-r20"  href="http://www.nike.com.br/produtos/meninas?nid=105979">
 									MENINA
 								</a>
-						</div>
-			      		
-			      		<div className="nav-item"> 	
+						</div>	
+						<div className="nav-item nav-item-cart"> 	
 			      				<p className="control">
-			      					<a className="button">
-			      						<img src="http://www.raphaelfabeni.com.br/rv/images/cart.png" className="nav-icon-cart" alt="Carrinho" />
+			      					<a className="button-cart">
+			      						<img className="nav-icon-cart" src="http://www.raphaelfabeni.com.br/rv/images/cart.png" alt="Carrinho" />
 			      					</a>
 			      				</p>
 						</div>

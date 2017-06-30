@@ -61,7 +61,19 @@ body{
 .nav-item a:hover{
 	border-bottom: 1px solid #666;
 }
-
+.nav-right {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: space-between;
+}
+.nav-toggle{
+	margin-left: auto;
+}
+@media screen and (max-width: 768px){
+	.button-cart{
+		margin-left: 1em;
+	}
+}
 /*BIG BANNER COMPONENT*/
 .big-banner{
 	width: 100%;	
