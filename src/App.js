@@ -23,7 +23,7 @@ class App extends Component {
 			<div className="App">
 				<CompHeader />
 				<CompBigBanner imgUrl="./images/banner_finishit.jpg" 
-								bgColor="#ff5d29" 
+								bgColor="#ff5b2b" 
 								bgPos="center top" 
 								height="550px" />
 				<CompShopMain />
