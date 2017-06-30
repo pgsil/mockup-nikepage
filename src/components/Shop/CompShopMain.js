@@ -32,6 +32,7 @@ export default class CompShopMain extends Component {
 		for(var key in this.refs){
 			if(this.refs.hasOwnProperty(key)){
 				console.log(this.refs[key]);
+				this.refs[key].setState({checked: false});
 			}
 		}
 	}

@@ -54,20 +54,48 @@ body{
 	font-size: 10.9pt;
 	color: black;
 }
+.nav-item a{
+	border-top: none!important;
+	border-bottom: 1px solid rgba(0,0,0,0);
+}
+.nav-item a:hover{
+	border-bottom: 1px solid #666;
+}
 
 /*BIG BANNER COMPONENT*/
 .big-banner{
 	width: 100%;	
-	background-position: center top;
-	background-repeat: no-repeat;
+	background-position: center top!important;
+	background-repeat: no-repeat!important;
 }
+.banner-text-justdoit{
+	color: white;
+	font-size: 55pt;
+	font-weight: bolder;
+}
+
 @media only screen and (max-width: 1024px){
 	.big-banner{
 		background-size: contain;
 	    height: 0!important;
-	    padding-top: 50%;
+	    padding-top: 50%!important;
+	    background-position: center top!important;
+	    background-repeat: no-repeat!important;
+	}
+	.banner-content{
+		color: white;
+		font-size: 55pt;
+		font-weight: bolder;
+		margin-top: -50%!important;
 	}
 }
+@media only screen and (max-width: 600px){
+	.banner-content{
+		font-size: 25pt!important;
+		margin-top: -50%!important;
+	}
+}
+
 
 /*--SHOP--*/
 
@@ -113,21 +141,33 @@ body{
 	min-height: 46px;
 	min-width: 166px;
 }
+.filter-inner{	
+	justify-content: flex-start;
+}
 
-@media only screen and (max-width: 1000px){
+@media screen and (max-width: 1000px){
 	.filters-main{
 		margin-left: 2em;
 	}
-}
-@media screen and (max-width: 1000px){
-	.filters-main.level-left{
-	    -ms-flex-preferred-size: auto;
-	    flex-basis: auto;
-	    -webkit-box-flex: 0;
-	    -ms-flex-positive: 0;
-	    flex-grow: 0;
-	    -ms-flex-negative: 0;
-	    flex-shrink: 0;
+	.filter-title{
+		margin-bottom: 1em;
+	}
+	.level-left{
+	    display: block!important;
+    }
+    .level-right{
+    	display: block!important;
+    	margin-top: 0!important;
+    	margin-right: 1em;
+    }
+    .filter-item{
+    	display: inline-block!important;
+	}
+    .filter-item input{
+		display: inline-block!important;
+	}
+	.button-showall{
+		margin-top: 1em;
 	}
 }
 
@@ -213,6 +253,11 @@ body{
 	font-weight: 400;
 	color: #666;
 }
+.shop-item-empty{
+	margin-left: 32px;
+	font-size: 12pt;
+	font-weight: bold;
+}
 .button-buy{
 	font-family: 'Roboto'!important; sans-serif;
 	font-weight: 400!important;
@@ -222,4 +267,10 @@ body{
 	width: 100%;
 	background-color: #ff5c2b!important;
 	color: white!important;
+}
+
+@media screen and (max-width: 768px) {
+  #menu-toggle:checked + .nav-menu {
+    display: block;
+  }
 }

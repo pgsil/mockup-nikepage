@@ -57,7 +57,7 @@ export default class CompShopCategory extends Component {
 
 			/*Only returns the components if there were hits after filtering*/
 			if(allNull(componentsReady)){
-				return (<p>Sem resultados!</p>);
+				return (<div><p className="shop-item-empty">Sem resultados!</p><p className="shop-item-empty">Use filtros diferentes!</p></div>);
 			}
 			else{
 				return componentsReady;
@@ -79,13 +79,15 @@ export default class CompShopCategory extends Component {
 		  slidesToScroll: 1,
 		  responsive: [
 					    {
-					      breakpoint: 1024,
+					      breakpoint: 1000,
 					      settings: {
-					        unslick: true
+					        slidesToShow: 3,
+					        slidesToScroll: 3,
+					        centerMode: false
 					      }
 					    },
 					    {
-					      breakpoint: 770,
+					      breakpoint: 870,
 					      settings: {
 					        slidesToShow: 2,
 					        slidesToScroll: 2
@@ -96,10 +98,20 @@ export default class CompShopCategory extends Component {
 					      settings: {
 					        slidesToShow: 1,
 					        slidesToScroll: 1,
-					        centerMode: true
+					        arrows: false
 					      }
-					    }
-					  ]
+					    },
+					    {
+					      breakpoint: 400,
+					      settings: {
+					        slidesToShow: 1,
+					        slidesToScroll: 1,
+					        centerMode: true,
+					        arrows: false,
+					        mobileFirst: true
+					      }
+					    },
+		  ]
 		};
 
 		return (
