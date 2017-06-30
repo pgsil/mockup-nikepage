@@ -5,6 +5,9 @@ import CompShopItem from './CompShopItem';
 
 export default class CompShopCategory extends Component {
 	buildItems(){
+		/*IMPROVE THIS*/
+		/*IMPROVE THIS*/
+		/*IMPROVE THIS*/
 		if(this.props.data){
 			let filters = this.props.filters;
 
@@ -14,6 +17,7 @@ export default class CompShopCategory extends Component {
 								name={element.title}
 								imgurl={element.image}
 								installments={element.installments}
+								hightop={element["high-top"]}
 								price={element.price} /></div>)
 
 				/*No filter, just return components*/
@@ -66,6 +70,7 @@ export default class CompShopCategory extends Component {
 	}
 
 	render(){
+		/*does this belong here*/
 		var slideSettings = {
 		  dots: true,
 		  infinite: false,

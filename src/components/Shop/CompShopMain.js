@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import CompShopCategory from './CompShopCategory';
+import FilterCheckbox from '../FilterCheckbox';
 
 export default class CompShopMain extends Component {
 	constructor(props){
@@ -21,24 +22,20 @@ export default class CompShopMain extends Component {
 		.catch((err) => {console.log("JSON fetch error at componentWillMount in CompShopMain: " + err)});
 	}
 
-	handleCheckbox(e){
-		let catgo = e.target.name;
+	handleCheckbox(value){
+		let catgo = value;		
 
 		if(this.state.filters.indexOf(catgo) > -1){
 			/*Remove from filters because it's there*/
 			let result = this.state.filters;
 			result.splice(this.state.filters.indexOf(catgo), 1);
-			this.setState({filters: result});
-
-			e.target.checked = false;
+			this.setState({filters: result});			
 		}
 		else{
 			/*Add to filters because it's not there*/
 			let result = this.state.filters;
 			result.push(catgo);
 			this.setState({filters: result});
-
-			e.target.checked = true;
 		}
 	}
 
@@ -54,44 +51,34 @@ export default class CompShopMain extends Component {
 	render(){
 		return (
 			<div className="container">
-
 				<br/><br/>
 
-				<div className="level">
+				<div className="level filters-main">
 					<div className="level-left">
-						<b>Chuteiras HyperVenom:</b>
+						<span className="filter-title space-r40"><b>Chuteiras HyperVenom:</b></span>
 
 						<span>&nbsp;</span>
 
-						<label className="filter-item">
-							<input type="checkbox" className="checkbox" name="high-top" onChange={this.handleCheckbox} />
-							Cano alto
-						</label>
+						<FilterCheckbox name="high-top" label="Cano alto" change={this.handleCheckbox} />
 
-						<label className="filter-item">
-							<input type="checkbox" className="checkbox" name="low-top" onChange={this.handleCheckbox} />
-							Cano baixo
-						</label>
+						<FilterCheckbox name="low-top" label="Cano baixo" change={this.handleCheckbox} />
 
-						<label className="filter-item">
-							<input type="checkbox" className="checkbox" name="campo" onChange={this.handleCheckbox} />
-							Futebol Campo
-						</label>
+						<FilterCheckbox name="campo" label="Futebol Campo" change={this.handleCheckbox} />
 
-						<label className="filter-item">
-							<input type="checkbox" className="checkbox" name="society" onChange={this.handleCheckbox} />
-							Futebol Society
-						</label>
+						<FilterCheckbox name="society" label="Futebol Society" change={this.handleCheckbox} />
 					</div>
 
 					<div className="level-right">
-						<button className="button is-dark">TODOS OS PRODUTOS</button>
+						<button className="button is-dark button-showall">TODOS OS PRODUTOS</button>
 					</div>
 				</div>
+				<div className="separator">&nbsp;</div>
 
 				<div className="itemslist">
 					<CompShopCategory title="Mais vendidos" data={this.state.json["best-sellers"]} category="best-sellers" filters={this.state.filters} />
+
 					<br/>
+
 					<CompShopCategory title="Lançamentos" data={this.state.json["releases"]} category="releases" filters={this.state.filters} />
 				</div>
 			</div>
