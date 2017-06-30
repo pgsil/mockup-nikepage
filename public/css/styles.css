@@ -14,10 +14,11 @@ body{
 }
 
 /*If screen > 1600px, container gets wider*/
-@media screen and (min-width: 1600px)
-.container {
-    max-width: 1600px;
-    width: 1600px;
+@media screen and (min-width: 1600px){
+	.container {
+	    max-width: 1600px;
+	    width: 1600px;
+	}
 }
 
 /*-----------------*/
@@ -103,19 +104,19 @@ body{
 		font-size: 35pt!important;
 	}
 }
-}
+
 @media only screen and (max-width: 600px){
 	.banner-content{
 		margin-top: -50%!important;
 	}
-
+}
 
 
 /*--SHOP--*/
 
 /*Shop filter*/
 .filters-main{
-	margin-bottom: 0px!important;
+	margin-bottom: 0!important;
 }
 .filter-title{
 	font-size: 13.5pt;
@@ -149,7 +150,7 @@ body{
     position: absolute;
 } 
 .button-showall{
-	font-family: 'Roboto'!important; sans-serif;
+	font-family: 'Roboto', sans-serif;
 	font-weight: bold;
 	font-size: 10pt;
 	min-height: 46px;
@@ -158,7 +159,6 @@ body{
 .filter-inner{	
 	justify-content: flex-start;
 }
-
 @media screen and (max-width: 1000px){
 	.filters-main{
 		margin-left: 2em;
@@ -188,16 +188,18 @@ body{
 /*Shop categories*/
 .shop-category{
 	min-height: 500px;
+	margin-bottom: 3em;
 }
 .shop-category-title{
 	font-size: 12pt;
 	font-weight: bold;
 }
-	@media only screen and (max-width: 1020px){
-		.shop-category-title{
-			margin-left: 2em;
-		}
+@media only screen and (max-width: 1020px){
+	.shop-category-title{
+		margin-left: 2em;
 	}
+}
+
 /*Shop category carousel page markers*/
 .slick-dots li.slick-active button:before {
     opacity: .5;
@@ -210,6 +212,7 @@ body{
 	margin-right: 0;
 	margin-left: 0;
 }
+
 /*Shop category carousel arrows*/
 .slick-prev:after {
   content: "<";
@@ -273,7 +276,7 @@ body{
 	font-weight: bold;
 }
 .button-buy{
-	font-family: 'Roboto'!important; sans-serif;
+	font-family: 'Roboto', sans-serif!important;
 	font-weight: 400!important;
 	font-size: 10pt;
 	min-height: 46px;

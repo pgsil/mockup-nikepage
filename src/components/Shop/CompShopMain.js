@@ -15,7 +15,7 @@ export default class CompShopMain extends Component {
 	componentWillMount(){
 		console.log("Mounting CompShopMain.");
 
-		fetch('http://www.raphaelfabeni.com.br/rv/data.json')
+		fetch('./data.json')
 		.then((response) => response.json())
 		.then((json) => {this.setState({json: json})})
 		.then(() => console.log("JSON fetch success"))
