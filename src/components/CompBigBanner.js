@@ -4,7 +4,7 @@ export default class CompBigBanner extends Component {
 	getDarken(){
 		if(this.props.darken){
 			let urlstr = 'url('+ this.props.imgUrl + ')';
-			return "linear-gradient(" + "rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55) )," + urlstr;
+			return "linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55) )," + urlstr;
 		}
 		else{
 			return 'url('+ this.props.imgUrl + ')';
