@@ -8,12 +8,14 @@ import Footer from './components/Footer';
 class App extends Component {
 	bannerContents(){
 		return (<div className="has-text-centered level-item banner-content">
-					<div><p className="banner-text-justdoit">JUST DO IT.</p>
-					
-					<button	className="button is-dark button-showall">
-						TODOS OS PRODUTOS
-					</button>
-					</div></div>)
+					<div>
+						<p className="banner-text-justdoit">JUST DO IT.</p>
+						
+						<button	className="button is-dark button-showall" onClick={() => {window.scrollTo(0, 0)}}>
+							TODOS OS PRODUTOS
+						</button>
+					</div>
+				</div>)
 	}
 
 	render() {
