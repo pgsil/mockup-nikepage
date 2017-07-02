@@ -12,13 +12,16 @@ export default class CompShopCategory extends Component {
 			let filters = this.props.filters;
 
 			let componentsReady = this.props.data.map((element, index) => {
-				let componentMapped = (<div key={"compshopitem-" + this.props.category + index + "-container"}><CompShopItem 
+				let componentMapped = (
+						<div key={"compshopitem-" + this.props.category + index + "-container"}>
+							<CompShopItem 
 								key={"compshopitem-" + this.props.category + index} 
 								name={element.title}
 								imgurl={element.image}
 								installments={element.installments}
 								hightop={element["high-top"]}
-								price={element.price} /></div>)
+								price={element.price} />
+						</div>)
 
 				/*No filter, just return components*/
 				if(filters.length === 0){
