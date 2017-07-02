@@ -6,8 +6,33 @@ export default class CompShopItem extends Component {
 
 		this.state = {hovered: false};
 
+		this.handleBuyButtonClick = this.handleBuyButtonClick.bind(this);
 		this.onMouseEnterHandler = this.onMouseEnterHandler.bind(this);
 		this.onMouseLeaveHandler = this.onMouseLeaveHandler.bind(this);
+	}
+
+	componentWillMount(){
+		// request permission on page load
+		document.addEventListener('DOMContentLoaded', function () {
+		  if (Notification.permission !== "granted")
+		    Notification.requestPermission();
+		});
+	}
+
+	handleBuyButtonClick(){
+	  if (!Notification) {
+	    return;
+	  }
+
+	  if (Notification.permission !== "granted")
+	    Notification.requestPermission();
+	  else {
+	    let notification = new Notification('Adicionado ao carrinho!', {
+	      icon: 'http://www.raphaelfabeni.com.br/rv/images/cart.png',
+	      body: "Você adicionou " + this.props.name + " ao carrinho!",
+	    });
+	    setTimeout(function(){notification.close()}, 2000);  
+	  }
 	}
 
 	onMouseEnterHandler(){
@@ -41,7 +66,7 @@ export default class CompShopItem extends Component {
 				<p className="shop-item-price">R$ {price}</p>
 				<p className="shop-item-installments">ou {this.props.installments.number}X {installmentsValue} sem juros</p>
 
-				<div className="has-text-centered"><br/>{this.state.hovered ? <button className="button is-warning button-buy">COMPRAR</button> : <button className="button is-warning button-buy" style={{opacity: 0}} >COMPRAR</button>}</div>
+				<div className="has-text-centered"><br/>{this.state.hovered ? <button className="button is-warning button-buy" onClick={this.handleBuyButtonClick}>COMPRAR</button> : <button className="button is-warning button-buy" style={{opacity: 0}} >COMPRAR</button>}</div>
 			</span>
 		);
 	}
