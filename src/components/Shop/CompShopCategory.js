@@ -18,7 +18,7 @@ export default class CompShopCategory extends Component {
 								installments={element.installments}
 								hightop={element["high-top"]}
 								price={element.price} />
-						</div>)
+						</div>);
 
 				/*No filter, just return components*/
 				if(filters.length === 0){
@@ -61,12 +61,12 @@ export default class CompShopCategory extends Component {
 			}
 			else{
 				return componentsReady;
-			}
+			};
 		}
 		else{
 			console.log("CompShopCategory buildItems(): No props.data. Loading or fetch error?")
 			return <p>Carregando...</p>
-		}
+		};
 	}
 
 	render(){
