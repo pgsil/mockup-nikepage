@@ -130,9 +130,12 @@ body{
 	font-size: 12pt;
 	vertical-align: middle;
 }
+
+/* firefox checkbox styling is broken */
+/* https://bugzilla.mozilla.org/show_bug.cgi?id=446511#c9 */
 .filter-item input {
     -webkit-appearance: none;
-    -moz-appearance: none;
+    -moz-appearance: checkbox;
     appearance: none;
 
     outline: none;
