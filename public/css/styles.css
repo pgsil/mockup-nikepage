@@ -74,6 +74,9 @@ body{
 	.button-cart{
 		margin-left: 1em;
 	}
+	.navspacetop{
+		height: 15px;
+	}
 }
 /*BIG BANNER COMPONENT*/
 .big-banner{
@@ -176,8 +179,10 @@ body{
     	margin-top: 0!important;
     	margin-right: 1em;
     }
-    .filter-item{
-    	display: inline-block!important;
+    .filter-item{    	
+	    display: inline-block!important;
+	    margin-right: 5em;
+	    margin-bottom: 0.5em;
 	}
     .filter-item input{
 		display: inline-block!important;
