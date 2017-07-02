@@ -61,12 +61,12 @@ export default class CompShopCategory extends Component {
 			}
 			else{
 				return componentsReady;
-			};
+			}
 		}
 		else{
 			console.log("CompShopCategory buildItems(): No props.data. Loading or fetch error?")
 			return <p>Carregando...</p>
-		};
+		}
 	}
 
 	render(){
