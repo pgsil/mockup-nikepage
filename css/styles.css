@@ -74,6 +74,9 @@ body{
 	.button-cart{
 		margin-left: 1em;
 	}
+	.navspacetop{
+		height: 15px;
+	}
 }
 /*BIG BANNER COMPONENT*/
 .big-banner{
@@ -89,7 +92,7 @@ body{
 
 @media only screen and (max-width: 1024px){
 	.big-banner{
-		background-size: contain;
+		background-size: cover;
 	    height: 0!important;
 	    padding-top: 50%!important;
 	    background-position: center top!important;
@@ -127,9 +130,12 @@ body{
 	font-size: 12pt;
 	vertical-align: middle;
 }
+
+/* firefox checkbox styling is broken */
+/* https://bugzilla.mozilla.org/show_bug.cgi?id=446511#c9 */
 .filter-item input {
     -webkit-appearance: none;
-    -moz-appearance: none;
+    -moz-appearance: checkbox;
     appearance: none;
 
     outline: none;
@@ -176,8 +182,10 @@ body{
     	margin-top: 0!important;
     	margin-right: 1em;
     }
-    .filter-item{
-    	display: inline-block!important;
+    .filter-item{    	
+	    display: inline-block!important;
+	    margin-right: 5em;
+	    margin-bottom: 0.5em;
 	}
     .filter-item input{
 		display: inline-block!important;
