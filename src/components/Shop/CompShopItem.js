@@ -43,7 +43,7 @@ export default class CompShopItem extends Component {
 
 				<div className="has-text-centered"><br/>{this.state.hovered ? <button className="button is-warning button-buy">COMPRAR</button> : <button className="button is-warning button-buy" style={{opacity: 0}} >COMPRAR</button>}</div>
 			</span>
-		)
+		);
 	}
 
 	render(){
