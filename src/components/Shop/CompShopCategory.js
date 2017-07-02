@@ -5,9 +5,6 @@ import CompShopItem from './CompShopItem';
 
 export default class CompShopCategory extends Component {
 	buildItems(){
-		/*IMPROVE THIS*/
-		/*IMPROVE THIS*/
-		/*IMPROVE THIS*/
 		if(this.props.data){
 			let filters = this.props.filters;
 
